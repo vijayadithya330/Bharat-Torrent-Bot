@@ -99,11 +99,11 @@ class Progress:
             try:
                 if not self._mess.photo:
                     await self._mess.edit_text(
-                        text="<b>📤<i>ᴜᴘʟᴏᴀᴅɪɴɢ...</i></b>\n\n🗂File Name:</b> {}\n{}".format(ud_type, tmp), reply_markup=reply_markup
+                        text="<b>📤<i>ᴜᴘʟᴏᴀᴅɪɴɢ...</i></b>\n\n🗂<b>File Name:</b> {}\n{}".format(ud_type, tmp), reply_markup=reply_markup
                     )
                 else:
                     await self._mess.edit_caption(
-                        caption="<b>📤<i>ᴜᴘʟᴏᴀᴅɪɴɢ...</i></b>\n\n🗂File Name:</b> {}\n{}".format(ud_type, tmp)
+                        caption="<b>📤<i>ᴜᴘʟᴏᴀᴅɪɴɢ...</i></b>\n\n🗂<b>File Name:</b> {}\n{}".format(ud_type, tmp)
                     )
             except FloodWait as fd:
                 logger.warning(f"{fd}")
