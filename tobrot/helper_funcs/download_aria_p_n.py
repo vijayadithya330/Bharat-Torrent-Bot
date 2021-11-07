@@ -274,8 +274,9 @@ async def call_apropriate_function(
                     mention_req_user = (
                         f"<a href='tg://user?id={user_id}'>🧔🏻‍♂ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇꜱ!👱🏻‍♀</a>\n\n"
                     )
-                    message_to_send = f"\n<code>{str(file.name)}</code>\n<b>💽<b>ᴜᴘʟᴏᴀᴅᴇᴅ ꜱɪᴢᴇ:</b> {file.total_length_string()}</b>\n\n" + message_to_send 
-                    message_to_send = message_to_send + "\n\n" + mention_req_user + "<b>🧑🏻‍💻ᴘᴏᴡᴇʀᴇᴅ ʙʏ:</b> @VijayAdithyaa"
+                    message_to_send = mention_req_user + message_to_send f"💽<b>ᴜᴘʟᴏᴀᴅᴇᴅ ꜱɪᴢᴇ:</b> {file.total_length_string()}\n"
+                    message_to_send = message_to_send + "\n" 
+                    message_to_send = message_to_send + "<b>🧑🏻‍💻ᴘᴏᴡᴇʀᴇᴅ ʙʏ:</b> @VijayAdithyaa"
                 else:
                     message_to_send = "𝚂𝚘𝚛𝚛𝚢! 𝚈𝚘𝚞𝚛 𝚁𝚎𝚚𝚞𝚎𝚜𝚝𝚎𝚍 𝚄𝚙𝚕𝚘𝚊𝚍𝚒𝚗𝚐 𝙵𝚒𝚕𝚎𝚜 𝙵𝚊𝚒𝚕𝚎𝚍.😞"
                 await user_message.reply_text(
@@ -311,7 +312,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                     pass
                 #
                 if is_file is None:
-                    msgg = f" <b>🔗Conn:</b> {file.connections}"
+                    msgg = f"<b>🔗Conn:</b> {file.connections}"
                 else:
                     msgg = f"<b>📈Peers:</b> {file.num_seeders} - <b>📉Seeders:</b> {file.connections}"
 
