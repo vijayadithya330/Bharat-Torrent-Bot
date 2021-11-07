@@ -274,7 +274,7 @@ async def call_apropriate_function(
                     mention_req_user = (
                         f"<a href='tg://user?id={user_id}'>🧔🏻‍♂ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇꜱ!👱🏻‍♀</a>\n\n"
                     )
-                    message_to_send = mention_req_user + message_to_send "<b>💽ᴜᴘʟᴏᴀᴅᴇᴅ ꜱɪᴢᴇ:</b> {file.total_length_string()}\n"
+                    message_to_send = mention_req_user + message_to_send = f"<b>💽ᴜᴘʟᴏᴀᴅᴇᴅ ꜱɪᴢᴇ:</b> {file.total_length_string()}\n"
                     message_to_send = message_to_send + "\n" 
                     message_to_send = message_to_send + "<b>🧑🏻‍💻ᴘᴏᴡᴇʀᴇᴅ ʙʏ:</b> @VijayAdithyaa"
                 else:
