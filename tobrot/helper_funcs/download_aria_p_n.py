@@ -313,7 +313,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 if is_file is None:
                     msgg = f" <b>🔗Conn:</b> {file.connections}"
                 else:
-                    msgg = f"<b>[<b>📈Peers:</b> {file.num_seeders} - <b>📉Seeders:</b> {file.connections}]"
+                    msgg = f"<b>📈Peers:</b> {file.num_seeders} - <b>📉Seeders:</b> {file.connections}"
 
                 percentage = int(file.progress_string(0).split('%')[0])
                 prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 7))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(15 - math.floor(percentage / 7))]))
@@ -326,6 +326,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 msg += f"\n<b>👀Status</b>: {file.progress_string()} <b>Of</b> {file.total_length_string()}"
                 msg += f"\n<b>⏳ETA:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
+                msg += f"\nBharat Torrent [🇮🇳]
                 msg += "\n"
                 inline_keyboard = []
                 ikeyboard = []
