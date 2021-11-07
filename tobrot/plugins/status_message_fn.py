@@ -71,7 +71,7 @@ async def status_message_f(client, message):
         # LOGGER.info(msg)
 
         if msg == "":
-            msg = "\n🤷‍♂️ No Active, Queued or Paused TORRENTs"
+            msg = "🤷‍♂️𝙽𝚘 𝙰𝚌𝚝𝚒𝚟𝚎, 𝚀𝚞𝚎𝚞𝚎𝚍 𝚘𝚛 𝙿𝚊𝚞𝚜𝚎𝚍 𝚃𝙾𝚁𝚁𝙴𝙽𝚃𝚜"
 
     hr, mi, se = up_time(time.time() - BOT_START_TIME)
     total, used, free = shutil.disk_usage(".")
@@ -80,14 +80,8 @@ async def status_message_f(client, message):
     free = humanbytes(free)
 
     ms_g = (
-        f'<b>╭───「  ⭕️ BOT STATISTICS ⭕️  」</b>\n' \
-        f'<b>│</b>\n' \
-        f"<b>├  ⏰ Bot Uptime : {hr} : {mi} : {se}</b>\n" \
-        f'<b>├  💾 Total Disk Space : {total}</b>\n' \
-        f'<b>├  📀 Total Used Space : {used}</b>\n' \
-        f'<b>├  💿 Total Free Space : {free}</b>\n' \
-        f'<b>│</b>\n' \
-        f'<b>╰───「 🚸 TorrentLeechX 🚸 」</b>'
+        f"Bot Uptime: Disk: \n"
+        f"Used: Free: \n'
     )
     # LOGGER.info(ms_g)
 
@@ -107,7 +101,7 @@ async def status_message_f(client, message):
 async def cancel_message_f(client, message):
     if len(message.command) > 1:
         # /cancel command
-        i_m_s_e_g = await message.reply_text("checking..?", quote=True)
+        i_m_s_e_g = await message.reply_text("🕵🏻‍♂️𝙲𝚑𝚎𝚌𝚔𝚒𝚗𝚐...", quote=True)
         aria_i_p = await aria_start()
         g_id = message.command[1].strip()
         LOGGER.info(g_id)
@@ -117,7 +111,7 @@ async def cancel_message_f(client, message):
             LOGGER.info(downloads.remove(force=True, files=True))
             await i_m_s_e_g.edit_text("Leech Cancelled")
         except Exception as e:
-            await i_m_s_e_g.edit_text("<i>FAILED</i>\n\n" + str(e) + "\n#error")
+            await i_m_s_e_g.edit_text("<i>𝙵𝙰𝙸𝙻𝙴𝙳</i>\n\n" + str(e) + "\n#error")
     else:
         await message.delete()
 
@@ -139,14 +133,14 @@ async def exec_message_f(client, message):
         stdout, stderr = await process.communicate()
         e = stderr.decode()
         if not e:
-            e = "No Error"
+            e = "𝙽𝚘 𝙴𝚛𝚛𝚘𝚛"
         o = stdout.decode()
         if not o:
-            o = "No Output"
+            o = "𝙽𝚘 𝙾𝚞𝚝𝚙𝚞𝚝"
         else:
             _o = o.split("\n")
             o = "`\n".join(_o)
-        OUTPUT = f"**QUERY:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
+        OUTPUT = f"**𝚀𝚄𝙴𝚁𝚈:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
 
         if len(OUTPUT) > MAX_MESSAGE_LENGTH:
             with io.BytesIO(str.encode(OUTPUT)) as out_file:
@@ -164,7 +158,7 @@ async def exec_message_f(client, message):
 
 
 async def upload_document_f(client, message):
-    imsegd = await message.reply_text("processing ...")
+    imsegd = await message.reply_text("⏳𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...")
     if message.from_user.id in AUTH_CHANNEL:
         if " " in message.text:
             recvd_command, local_file_name = message.text.split(" ", 1)
@@ -177,7 +171,7 @@ async def upload_document_f(client, message):
 
 async def eval_message_f(client, message):
     if message.from_user.id in AUTH_CHANNEL:
-        status_message = await message.reply_text("Processing ...")
+        status_message = await message.reply_text("⏳𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
         reply_to_id = message.message_id
@@ -208,7 +202,7 @@ async def eval_message_f(client, message):
         elif stdout:
             evaluation = stdout
         else:
-            evaluation = "Success"
+            evaluation = "📌𝚂𝚞𝚌𝚌𝚎𝚜𝚜!"
 
         final_output = (
             "<b>EVAL</b>: <code>{}</code>\n\n<b>OUTPUT</b>:\n<code>{}</code> \n".format(
@@ -252,9 +246,9 @@ async def upload_log_file(client, message):
 
 async def upload_as_doc(client, message):
     user_specific_config[message.from_user.id]=UserDynaConfig(message.from_user.id,True)
-    await message.reply_text("**🗞 Your Files Will Be Uploaded As Document 📁**")
+    await message.reply_text("📌𝙸 𝙰𝚖 𝙽𝚘𝚛𝚖𝚊𝚕𝚕𝚢 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙰𝚜 𝙳𝚘𝚌𝚞𝚖𝚎𝚗𝚝 𝙵𝚒𝚕𝚎🗂")
 
 
 async def upload_as_video(client, message):
     user_specific_config[message.from_user.id]=UserDynaConfig(message.from_user.id,False)
-    await message.reply_text("**🗞 Your Files Will Be Uploaded As Streamable 🎞**")
+    await message.reply_text("📌𝚈𝚘𝚞𝚛 𝙵𝚒𝚕𝚎𝚜 𝚆𝚒𝚕𝚕 𝙱𝚎 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙰𝚜 𝚂𝚝𝚛𝚎𝚊𝚖𝚊𝚋𝚕𝚎🎞")
