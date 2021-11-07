@@ -274,8 +274,8 @@ async def call_apropriate_function(
                     mention_req_user = (
                         f"<a href='tg://user?id={user_id}'>🧔🏻‍♂ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇꜱ!👱🏻‍♀</a>\n\n"
                     )
-                    message_to_send + message_to_send = f"<b>💽ᴜᴘʟᴏᴀᴅᴇᴅ ꜱɪᴢᴇ:</b> {file.total_length_string()}\n" + message_to_send
-                    message_to_send = message_to_send + "\n" 
+                    message_to_send = mention_req_user + message_to_send 
+                    message_to_send = message_to_send + f"<b>💽ᴜᴘʟᴏᴀᴅᴇᴅ ꜱɪᴢᴇ:</b> {file.total_length_string()}\n 
                     message_to_send = message_to_send + "<b>🧑🏻‍💻ᴘᴏᴡᴇʀᴇᴅ ʙʏ:</b> @VijayAdithyaa"
                 else:
                     message_to_send = "𝚂𝚘𝚛𝚛𝚢! 𝚈𝚘𝚞𝚛 𝚁𝚎𝚚𝚞𝚎𝚜𝚝𝚎𝚍 𝚄𝚙𝚕𝚘𝚊𝚍𝚒𝚗𝚐 𝙵𝚒𝚕𝚎𝚜 𝙵𝚊𝚒𝚕𝚎𝚍.😞"
