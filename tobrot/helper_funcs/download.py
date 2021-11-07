@@ -36,7 +36,7 @@ async def down_load_media_f(client, message):
                 message=message.reply_to_message,
                 file_name=download_location,
                 progress=prog.progress_for_pyrogram,
-                progress_args=("⏬𝙩𝙧𝙮𝙞𝙣𝙜 𝙩𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙🧲", c_time),
+                progress_args=("𝚃𝚛𝚢𝚒𝚗𝚐 𝚃𝚘 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍", c_time),
             )
         except Exception as g_e:
             await mess_age.edit(str(g_e))
@@ -48,10 +48,10 @@ async def down_load_media_f(client, message):
         await asyncio.sleep(10)
         if the_real_download_location:
             await mess_age.edit_text(
-                f"⏬𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙚𝙙 𝙩𝙤 <code>{the_real_download_location}</code> 𝙞𝙣 <u>{ms}</u> 𝙨𝙚𝙘𝙤𝙣𝙙𝙨🛬"
+                f"🥳𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚍 𝚃𝚘 <code>{the_real_download_location}</code> 𝙸𝚗 <u>{ms}</u> 𝚜𝚎𝚌𝚘𝚗𝚍𝚜"
             )
         else:
-            await mess_age.edit_text("🔴𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝘾𝙖𝙣𝙘𝙚𝙡𝙡𝙚𝙙 𝙤𝙧 𝙨𝙤𝙢𝙚 𝙚𝙧𝙧𝙤𝙧 𝙝𝙖𝙥𝙥𝙚𝙣𝙚𝙙🔴")
+            await mess_age.edit_text("😔𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍 𝚘𝚛 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚑𝚊𝚙𝚙𝚎𝚗𝚎𝚍")
             return
         the_real_download_location_g = the_real_download_location
         if user_command == TELEGRAM_LEECH_UNZIP_COMMAND.lower():
@@ -63,12 +63,12 @@ async def down_load_media_f(client, message):
             except Exception as ge:
                 LOGGER.info(ge)
                 LOGGER.info(
-                    f"😑𝘾𝙖𝙣𝙩 𝙀𝙭𝙩𝙧𝙖𝙘𝙩 {os.path.basename(the_real_download_location)}, 𝙐𝙥𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙩𝙝𝙚 𝙨𝙖𝙢𝙚 𝙛𝙞𝙡𝙚"
+                    f"😑𝙲𝚊𝚗'𝚝 𝚎𝚡𝚝𝚛𝚊𝚌𝚝 {os.path.basename(the_real_download_location)}, 𝚄𝚙𝚕𝚘𝚊𝚍𝚒𝚗𝚐 𝚝𝚑𝚎 𝚜𝚊𝚖𝚎 𝚏𝚒𝚕𝚎"
                 )
         await upload_to_gdrive(the_real_download_location_g, mess_age, message, user_id)
     else:
         await mess_age.edit_text(
-            "👺𝙍𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙈𝙚𝙙𝙞𝙖, 𝙩𝙤 𝙪𝙥𝙡𝙤𝙖𝙙 𝙩𝙤 𝙩𝙝𝙚 𝘾𝙡𝙤𝙪𝙙 𝘿𝙧𝙞𝙫𝙚👺"
+            "𝚁𝚎𝚙𝚕𝚢 𝚝𝚘 𝚊 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝙼𝚎𝚍𝚒𝚊, 𝚝𝚘 𝚞𝚙𝚕𝚘𝚊𝚍 𝚝𝚘 𝚝𝚑𝚎 𝙲𝚕𝚘𝚞𝚍 𝙳𝚛𝚒𝚟𝚎."
         )
 
 
@@ -88,7 +88,7 @@ async def download_tg(client, message):
                 message=message.reply_to_message,
                 file_name=download_location,
                 progress=prog.progress_for_pyrogram,
-                progress_args=("⏬𝙩𝙧𝙮𝙞𝙣𝙜 𝙩𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙🧲", c_time),
+                progress_args=("𝚃𝚛𝚢𝚒𝚗𝚐 𝚃𝚘 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍", c_time),
             )
         except Exception as g_e:
             await mess_age.edit(str(g_e))
@@ -100,9 +100,9 @@ async def download_tg(client, message):
         await asyncio.sleep(5)
         if the_real_download_location:
             await mess_age.edit_text(
-                f"⏬𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙚𝙙 𝙩𝙤 <code>{the_real_download_location}</code> 𝙞𝙣 <u>{ms}</u> 𝙨𝙚𝙘𝙤𝙣𝙙𝙨🛬"
+                f"🥳𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚍 𝚃𝚘 <code>{the_real_download_location}</code> 𝙸𝚗 <u>{ms}</u> 𝚜𝚎𝚌𝚘𝚗𝚍𝚜"
             )
         else:
-            await mess_age.edit_text("🔴𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝘾𝙖𝙣𝙘𝙚𝙡𝙡𝙚𝙙 𝙤𝙧 𝙨𝙤𝙢𝙚 𝙚𝙧𝙧𝙤𝙧 𝙝𝙖𝙥𝙥𝙚𝙣𝙚𝙙🔴")
+            await mess_age.edit_text("😔 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍 𝚘𝚛 𝚜𝚘𝚖𝚎 𝚎𝚛𝚛𝚘𝚛 𝚑𝚊𝚙𝚙𝚎𝚗𝚎𝚍")
             return
     return the_real_download_location, mess_age
