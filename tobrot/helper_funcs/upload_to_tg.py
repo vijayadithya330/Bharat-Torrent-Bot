@@ -94,9 +94,9 @@ async def upload_to_tg(
             LOGGER.info("TODO")
             d_f_s = humanbytes(os.path.getsize(local_file_name))
             i_m_s_g = await message.reply_text(
-                "𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙎𝙪𝙥𝙥𝙤𝙧𝙩𝙨 2𝙂𝘽 𝙈𝙖𝙭\n"
-                f"\n𝘿𝙚𝙩𝙚𝙘𝙩𝙚𝙙 𝙁𝙞𝙡𝙚 𝙎𝙞𝙯𝙚: {d_f_s} 📚\n"
-                "\n🤖𝙩𝙧𝙮𝙞𝙣𝙜 𝙩𝙤 𝙨𝙥𝙡𝙞𝙩 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚𝙨🌝🗜️"
+                "𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝙵𝚒𝚕𝚎𝚜 𝚄𝚙𝚕𝚘𝚊𝚍 𝙻𝚒𝚖𝚒𝚝 𝟸𝙶𝙱 𝙾𝚗𝚕𝚢!\n"
+                f"\n𝙳𝚎𝚝𝚎𝚌𝚝𝚎𝚍 𝙵𝚒𝚕𝚎 𝚂𝚒𝚣𝚎: {d_f_s} 📚\n"
+                "\n 𝚃𝚛𝚢𝚒𝚗𝚐 𝚃𝚘 𝚂𝚙𝚕𝚒𝚝 𝚃𝚑𝚎 𝙵𝚒𝚕𝚎𝚜🗜"
             )
             splitted_dir = await split_large_files(local_file_name)
             totlaa_sleif = os.listdir(splitted_dir)
@@ -274,7 +274,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button = []
         button.append(
             [pyrogram.InlineKeyboardButton(
-                text="☁️ 𝘾𝙡𝙤𝙪𝙙-𝙐𝙍𝙇 ☁️", url=f"{gautii}")]
+                text="☁️ Cloud URL ☁️", url=f"{gautii}")]
         )
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}/"
@@ -290,7 +290,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         await messa_ge.reply_text(
-            f"🗃️𝙁𝙞𝙡𝙚𝙣𝙖𝙢𝙚 : `{os.path.basename(file_upload)}` \n\n📀𝙎𝙞𝙯𝙚: {gjay} \n\n<a href='tg://user?id={g_id}'>#Uploaded To Team Drive ✅</a>",
+            f"🗂Filename: `{os.path.basename(file_upload)}` \n\n💽𝚂𝚒𝚣𝚎: {gjay} \n\n<a href='tg://user?id={g_id}'>#Uploaded To Team Drive</a>",
             reply_markup=button_markup,
         )
         shutil.rmtree(file_upload)
@@ -340,7 +340,7 @@ async def upload_single_file(
         message_for_progress_display = message
         if not edit_media:
             message_for_progress_display = await message.reply_text(
-                "📤𝙨𝙩𝙖𝙧𝙩𝙞𝙣𝙜 𝙪𝙥𝙡𝙤𝙖𝙙 𝙤𝙛 {}📦".format(
+                "📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 𝙾𝚏 {}🗂".format(
                     os.path.basename(local_file_name))
             )
         prog = Progress(from_user, client, message_for_progress_display)
@@ -371,7 +371,7 @@ async def upload_single_file(
             message_for_progress_display = message
             if not edit_media:
                 message_for_progress_display = await message.reply_text(
-                    "📤𝙨𝙩𝙖𝙧𝙩𝙞𝙣𝙜 𝙪𝙥𝙡𝙤𝙖𝙙 𝙤𝙛 {}📦".format(
+                    "📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 𝙾𝚏 {}🗂".format(
                         os.path.basename(local_file_name))
                 )
                 prog = Progress(from_user, client,
@@ -564,7 +564,7 @@ async def upload_single_file(
             time.sleep(g.x)
         except Exception as e:
             LOGGER.info(e)
-            await message_for_progress_display.edit_text("**🔴𝙁𝘼𝙄𝙇𝙀𝘿**\n" + str(e))
+            await message_for_progress_display.edit_text("**𝙵𝚊𝚒𝚕𝚎𝚍**\n" + str(e))
             LOGGER.exception(e)
         else:
             if message.message_id != message_for_progress_display.message_id:
