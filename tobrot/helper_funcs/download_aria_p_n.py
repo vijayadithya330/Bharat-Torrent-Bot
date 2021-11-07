@@ -154,7 +154,7 @@ def add_url(aria_instance, text_url, c_file_name):
     except Exception as e:
         return (
             False,
-            "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links. Read /help
+            "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links. Read /help "
         )
     else:
         return True, "" + download.gid + ""
