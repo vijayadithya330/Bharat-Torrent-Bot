@@ -140,7 +140,7 @@ async def exec_message_f(client, message):
         else:
             _o = o.split("\n")
             o = "`\n".join(_o)
-        OUTPUT = f"**𝚀𝚄𝙴𝚁𝚈:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
+        OUTPUT = f"**𝚀𝚄𝙴𝚁𝚈:**\n𝙲𝚘𝚖𝚖𝚊𝚗𝚍:\n`{cmd}` \n𝙿𝙸𝙳:\n`{process.pid}`\n\n**𝚂𝚝𝚍𝚎𝚛𝚛** \n`{e}`\n**𝙾𝚞𝚝𝚙𝚞𝚝:**\n{o}"
 
         if len(OUTPUT) > MAX_MESSAGE_LENGTH:
             with io.BytesIO(str.encode(OUTPUT)) as out_file:
@@ -158,7 +158,7 @@ async def exec_message_f(client, message):
 
 
 async def upload_document_f(client, message):
-    imsegd = await message.reply_text("⏳𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...")
+    imsegd = await message.reply_text("...")
     if message.from_user.id in AUTH_CHANNEL:
         if " " in message.text:
             recvd_command, local_file_name = message.text.split(" ", 1)
@@ -171,7 +171,7 @@ async def upload_document_f(client, message):
 
 async def eval_message_f(client, message):
     if message.from_user.id in AUTH_CHANNEL:
-        status_message = await message.reply_text("⏳𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...")
+        status_message = await message.reply_text("...")
         cmd = message.text.split(" ", maxsplit=1)[1]
 
         reply_to_id = message.message_id
@@ -205,7 +205,7 @@ async def eval_message_f(client, message):
             evaluation = "📌𝚂𝚞𝚌𝚌𝚎𝚜𝚜!"
 
         final_output = (
-            "<b>EVAL</b>: <code>{}</code>\n\n<b>OUTPUT</b>:\n<code>{}</code> \n".format(
+            "<b>𝙴𝚅𝙰𝙻</b>: <code>{}</code>\n\n<b>𝙾𝚄𝚃𝙿𝚄𝚃</b>:\n<code>{}</code> \n".format(
                 cmd, evaluation.strip()
             )
         )
