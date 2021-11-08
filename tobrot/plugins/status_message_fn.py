@@ -80,8 +80,10 @@ async def status_message_f(client, message):
     free = humanbytes(free)
 
     ms_g = (
-        f"Bot Uptime: Disk: \n"
-        f"Used: Free: \n"
+        f"<b>⏳Bot Uptime:</b> {hr} : {mi} : {se} \n"
+        f"<b>🖱Disk Space:</b> {total} \n"
+        f"<b>💾Used Space:</b> {used} \n"
+        f"<b>💽Free Space:</b> {free} \n"
     )
     # LOGGER.info(ms_g)
 
