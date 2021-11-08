@@ -74,7 +74,7 @@ async def upload_to_tg(
         new_m_esg = message
         if not message.photo:
             new_m_esg = await message.reply_text(
-                f"<a href='tg://user?id={from_user}'>🔎𝙁𝙤𝙪𝙣𝙙 {len(directory_contents)} 𝙁𝙞𝙡𝙚𝙨 🗂️</a>",
+                f"<a href='tg://user?id={from_user}'>🔎𝙵𝚘𝚞𝚗𝚍 {len(directory_contents)} 𝙵𝚒𝚕𝚎 🗂️</a>",
                 quote=True
                 # reply_to_message_id=message.message_id
             )
@@ -105,9 +105,9 @@ async def upload_to_tg(
             LOGGER.info(totlaa_sleif)
             ba_se_file_name = os.path.basename(local_file_name)
             await i_m_s_g.edit_text(
-                f"𝘿𝙚𝙩𝙚𝙘𝙩𝙚𝙙 𝙁𝙞𝙡𝙚 𝙎𝙞𝙯𝙚: {d_f_s} 💿\n"
-                f"\n<code>{ba_se_file_name}</code> 𝙨𝙥𝙡𝙞𝙩𝙩𝙚𝙙 𝙞𝙣𝙩𝙤 {number_of_files} 𝙛𝙞𝙡𝙚𝙨.\n"
-                "\n📤𝙩𝙧𝙮𝙞𝙣𝙜 𝙩𝙤 𝙪𝙥𝙡𝙤𝙖𝙙 𝙩𝙤 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢, 𝙣𝙤𝙬 🛫"
+                f"𝙳𝚎𝚝𝚎𝚌𝚝𝚎𝚍 𝙵𝚒𝚕𝚎 𝚂𝚒𝚣𝚎: {d_f_s} 💿\n"
+                f"\n<code>{ba_se_file_name}</code> 𝚂𝚙𝚕𝚒𝚝𝚝𝚎𝚍 𝙸𝚗𝚏𝚘 {number_of_files} 𝙵𝚒𝚕𝚎𝚜.\n"
+                "\n🤔𝚃𝚛𝚢𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 𝙽𝚘𝚠📤"
             )
             for le_file in totlaa_sleif:
                 # recursion: will this FAIL somewhere?
@@ -147,7 +147,7 @@ async def upload_to_tg(
 async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
     del_it = await message.edit_text(
-        f"<a href='tg://user?id={g_id}'>📤𝙉𝙤𝙬 𝙐𝙥𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙩𝙤 ☁️ 𝘾𝙡𝙤𝙪𝙙!!🛫</a>"
+        f"<a href='tg://user?id={g_id}'>📤𝙽𝚘𝚠 𝚄𝚙𝚕𝚘𝚊𝚍 𝚃𝚘 𝙲𝚕𝚘𝚞𝚍</a>"
     )
     if not os.path.exists("rclone.conf"):
         with open("rclone.conf", "w+", newline="\n", encoding="utf-8") as fole:
@@ -205,7 +205,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button = []
         button.append(
             [pyrogram.InlineKeyboardButton(
-                text="☁️ 𝘾𝙡𝙤𝙪𝙙-𝙐𝙍𝙇 ☁️", url=f"{gauti}")]
+                text="☁️ᴄʟᴏᴜᴅ ᴜʀʟ☁️", url=f"{gauti}")]
         )
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}"
@@ -214,14 +214,14 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append(
                 [
                     pyrogram.InlineKeyboardButton(
-                        text="🎦 𝙄𝙣𝙙𝙚𝙭-𝙐𝙧𝙡 🎦", url=f"{tam_link}"
+                        text="🎦ɪɴᴅᴇx ᴜʀʟ🎦", url=f"{tam_link}"
                     )
                 ]
             )
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         await messa_ge.reply_text(
-            f"🗃️𝙁𝙞𝙡𝙚𝙣𝙖𝙢𝙚 :  `{os.path.basename(file_upload)}`\n\n📀𝙎𝙞𝙯𝙚: {gjay}\n\n<a href='tg://user?id={g_id}'>#Uploaded To Team Drive ✅</a>",
+            f"🗂File Name:  `{os.path.basename(file_upload)}`\n\n💽Size: {gjay}\n\n<a href='tg://user?id={g_id}'>#Uploaded To Team Drive ✔</a>",
             reply_markup=button_markup,
         )
         os.remove(file_upload)
@@ -274,7 +274,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button = []
         button.append(
             [pyrogram.InlineKeyboardButton(
-                text="☁️ Cloud URL ☁️", url=f"{gautii}")]
+                text="☁️ ᴄʟᴏᴜᴅ ᴜʀʟ ☁️", url=f"{gautii}")]
         )
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}/"
@@ -283,7 +283,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append(
                 [
                     pyrogram.InlineKeyboardButton(
-                        text="🎦 𝙄𝙣𝙙𝙚𝙭-𝙐𝙧𝙡 🎦", url=f"{tam_link}"
+                        text="🎦 ɪɴᴅᴇx ᴜʀʟ 🎦", url=f"{tam_link}"
                     )
                 ]
             )
