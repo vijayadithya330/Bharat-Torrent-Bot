@@ -101,7 +101,7 @@ async def incoming_message_f(client, message):
             aria_i_p = await aria_start()
             # LOGGER.info(aria_i_p)
 
-        await i_m_sefg.edit_text("𝙲𝚕𝚒𝚌𝚔 𝚃𝚑𝚎 /status . 𝙶𝚎𝚝 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚂𝚝𝚊𝚝𝚞𝚜")
+        await i_m_sefg.edit_text("")
         # try to download the "link"
         is_zip = False
         is_cloud = False
