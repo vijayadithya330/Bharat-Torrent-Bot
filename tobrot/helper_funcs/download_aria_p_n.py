@@ -303,7 +303,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 # sometimes, this weird https://t.me/c/1220993104/392975
                 # error creeps up
                 # TODO: temporary workaround
-                downloading_dir_name = "⏳𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐..."
+                downloading_dir_name = "..."
                 try:
                     # another derp -_-
                     # https://t.me/c/1220993104/423318
