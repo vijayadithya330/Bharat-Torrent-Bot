@@ -368,16 +368,16 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
             LOGGER.info(
-                f"🤩<b>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚍 𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢:</b> {file.name} ({file.total_length_string()})"
+                f"🤩<b>ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ:</b> \n\n<b>ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>ꜰɪʟᴇ ꜱɪᴢᴇ:</b> ({file.total_length_string()})"
             )
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await event.edit(
-                f"🤩<b>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚍 𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢:</b> {file.name} ({file.total_length_string()})"
+                f"🤩<b>ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ:</b> \n\n<b>ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>ꜰɪʟᴇ ꜱɪᴢᴇ:</b> ({file.total_length_string()})"
             )
             return True
     except aria2p.client.ClientException:
         await event.edit(
-            f"😤<b>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍:</b> \n<code>{file.name} ({file.total_length_string()})</code>"
+            f"😤<b>ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ:</b> \n\n<b>ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>ꜰɪʟᴇ ꜱɪᴢᴇ:</b> ({file.total_length_string()})"
         )
     except MessageNotModified as ep:
         LOGGER.info(ep)
@@ -397,7 +397,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
         LOGGER.info(str(e))
         if "not found" in str(e) or "'file'" in str(e):
             await event.edit(
-                f"🗑<b>𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍:</b> \n<code>{file.name} ({file.total_length_string()})</code>"
+                f"🗑<b>ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ:</b> \n\n<b>ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>ꜰɪʟᴇ ꜱɪᴢᴇ:</b> ({file.total_length_string()})"
             )
             return False
         else:
