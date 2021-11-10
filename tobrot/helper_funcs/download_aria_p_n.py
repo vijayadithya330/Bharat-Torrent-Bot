@@ -397,7 +397,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
         LOGGER.info(str(e))
         if "not found" in str(e) or "'file'" in str(e):
             await event.edit(
-                f"🗑<b>ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ:</b> \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+                f"🗑**__ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ:__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
             )
             return False
         else:
