@@ -136,6 +136,6 @@ async def button(bot, update: CallbackQuery):
             await update.message.edit_text("You are not allowed to do that 🤭")
     elif cb_data == "fuckoff":
         await bot.answer_callback_query(
-            update.id, text="trying to cancel...", show_alert=False
+            update.id, text="𝚃𝚛𝚢 𝚝𝚘 𝚌𝚊𝚗𝚌𝚎𝚕...", show_alert=False
         )
-        await update.message.edit_text("Okay! fine 🤬")
+        await update.message.edit_text("𝙾𝚔𝚊𝚢! 𝚏𝚒𝚗𝚎🤬")
