@@ -80,6 +80,8 @@ async def status_message_f(client, message):
     free = humanbytes(free)
 
     ms_g = (
+        f"<b><i>ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ...</i></b>"
+        f"\n"
         f"<b>⏳Bot Uptime:</b> {hr} : {mi} : {se} \n"
         f"<b>🖱Disk Space:</b> {total} \n"
         f"<b>💾Used Space:</b> {used} \n"
