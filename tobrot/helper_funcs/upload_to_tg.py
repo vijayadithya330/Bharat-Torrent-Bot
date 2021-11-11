@@ -290,7 +290,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         await messa_ge.reply_text(
-            f"<b>🗂File Name:</b> `{os.path.basename(file_upload)}` \n\n<b>💽𝚂𝚒𝚣𝚎:</b> {gjay} \n\n<a href='tg://user?id={g_id}'>#Uploaded To Team Drive</a>",
+            f"<b>🗂File Name:</b> `{𝚘𝚜.𝚙𝚊𝚝𝚑.𝚋𝚊𝚜𝚎𝚗𝚊𝚖𝚎(𝚏𝚒𝚕𝚎_𝚞𝚙𝚕𝚘𝚊𝚍)}` \n\n<b>💽𝚂𝚒𝚣𝚎:</b> {gjay} \n\n<a href='tg://user?id={g_id}'>#Uploaded To Team Drive</a>",
             reply_markup=button_markup,
         )
         shutil.rmtree(file_upload)
@@ -340,8 +340,8 @@ async def upload_single_file(
         message_for_progress_display = message
         if not edit_media:
             message_for_progress_display = await message.reply_text(
-                "<b>📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍</b> {}".format(
-                    os.path.basename(local_file_name))
+                "<b>📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍</b> {}".{}".𝚏𝚘𝚛𝚖𝚊𝚝(                        
+                    𝚘𝚜.𝚙𝚊𝚝𝚑.𝚋𝚊𝚜𝚎𝚗𝚊𝚖𝚎(𝚕𝚘𝚌𝚊𝚕_𝚏𝚒𝚕𝚎_𝚗𝚊𝚖𝚎))
             )
         prog = Progress(from_user, client, message_for_progress_display)
         sent_message = await message.reply_document(
@@ -371,8 +371,8 @@ async def upload_single_file(
             message_for_progress_display = message
             if not edit_media:
                 message_for_progress_display = await message.reply_text(
-                    "<b>📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍</b> {}".format(
-                        os.path.basename(local_file_name))
+                    "<b>📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍</b> {}".𝚏𝚘𝚛𝚖𝚊𝚝(                        
+                        𝚘𝚜.𝚙𝚊𝚝𝚑.𝚋𝚊𝚜𝚎𝚗𝚊𝚖𝚎(𝚕𝚘𝚌𝚊𝚕_𝚏𝚒𝚕𝚎_𝚗𝚊𝚖𝚎))
                 )
                 prog = Progress(from_user, client,
                                 message_for_progress_display)
