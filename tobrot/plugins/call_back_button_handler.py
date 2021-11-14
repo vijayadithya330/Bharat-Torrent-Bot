@@ -76,7 +76,7 @@ async def button(bot, update: CallbackQuery):
                         else:
                             os.remove(file_name)
                     await i_m_s_e_g.edit_text(
-                        f"𝙻𝚎𝚎𝚌𝚑 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍 𝚋𝚢 <a href='tg://user?id={update.from_user.id}'>{update.from_user.first_name}</a>"
+                        f"✗ 𝙻𝚎𝚎𝚌𝚑 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍 𝚋𝚢 <a href='tg://user?id={update.from_user.id}'>{update.from_user.first_name}</a>"
                     )
                 except Exception as e:
                     await i_m_s_e_g.edit_text("<i>FAILED</i>\n\n" + str(e) + "\n#error")
