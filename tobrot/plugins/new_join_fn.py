@@ -25,6 +25,6 @@ async def help_message_f(client, message):
     # display the /help
 
     await message.reply_text(
-        """<b>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʙʜᴀʀᴀᴛ ᴛᴏʀʀᴇɴᴛ!\n\n ❯ <a href="https://telegra.ph/Bharat-Torrent-09-18"> ᴄʟɪᴄᴋ ᴛᴏ ʟᴇᴀʀɴ ɢʀᴏᴜᴘ ʀᴜʟᴇꜱ.</a>\n ❯ <a href="https://telegra.ph/-10-02-1238">ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ꜰɪʟᴇꜱ?</a>\n ❯ <a href="https://t.me/BharatTorrentPro/10">ᴄʟɪᴄᴋ ᴛᴏ ᴡᴀᴛᴄʜ ᴅᴇᴍᴏ ᴠɪᴅᴇᴏ</a> </b>""",
+        """""",
         disable_web_page_preview=True,
     )
