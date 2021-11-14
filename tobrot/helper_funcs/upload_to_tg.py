@@ -340,8 +340,8 @@ async def upload_single_file(
         message_for_progress_display = message
         if not edit_media:
             message_for_progress_display = await message.reply_text(
-                "<b>📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍</b> {}".𝚏𝚘𝚛𝚖𝚊𝚝(                        
-                    𝚘𝚜.𝚙𝚊𝚝𝚑.𝚋𝚊𝚜𝚎𝚗𝚊𝚖𝚎(𝚕𝚘𝚌𝚊𝚕_𝚏𝚒𝚕𝚎_𝚗𝚊𝚖𝚎))
+                "📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 {}".format( 
+                    os.path.basename(local_file_name))
             )
         prog = Progress(from_user, client, message_for_progress_display)
         sent_message = await message.reply_document(
@@ -371,8 +371,8 @@ async def upload_single_file(
             message_for_progress_display = message
             if not edit_media:
                 message_for_progress_display = await message.reply_text(
-                    "<b>📤 𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍</b> {}".𝚏𝚘𝚛𝚖𝚊𝚝(                        
-                        𝚘𝚜.𝚙𝚊𝚝𝚑.𝚋𝚊𝚜𝚎𝚗𝚊𝚖𝚎(𝚕𝚘𝚌𝚊𝚕_𝚏𝚒𝚕𝚎_𝚗𝚊𝚖𝚎))
+                    "📤𝚂𝚝𝚊𝚛𝚝𝚒𝚗𝚐 𝚃𝚘 𝚄𝚙𝚕𝚘𝚊𝚍 {}".format( 
+                        os.path.basename(local_file_name))
                 )
                 prog = Progress(from_user, client,
                                 message_for_progress_display)
