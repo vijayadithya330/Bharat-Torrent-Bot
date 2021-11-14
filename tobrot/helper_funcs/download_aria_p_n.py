@@ -327,6 +327,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 msg += f"\n<b>👀Status</b>: {file.progress_string()} <b>Of</b> {file.total_length_string()}"
                 msg += f"\n<b>🕒ETA:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
+                msg += f"\n<b>Using Engine:</b> Bharat Torrent"
                 msg += f"\n"
                 inline_keyboard = []
                 ikeyboard = []
