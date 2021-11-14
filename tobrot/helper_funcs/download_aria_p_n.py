@@ -323,7 +323,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 msg += f"\n"
                 msg += f"\n<b>🗂File Name:</b> {downloading_dir_name}"
                 msg += f"\n<b>♾{prog}</b>"
-                msg += f"\n<b>⏱Speed</b>: {file.download_speed_string()} <b>&</b> {file.upload_speed_string()}"
+                msg += f"\n<b>⏱Speed</b>: {file.download_speed_string()}"
                 msg += f"\n<b>👀Status</b>: {file.progress_string()} <b>Of</b> {file.total_length_string()}"
                 msg += f"\n<b>🕒ETA:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
@@ -354,7 +354,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                             f"🗑𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚒𝚗𝚐 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚒𝚗𝚐 𝙾𝚏 {file.name} 𝚖𝚊𝚢 𝚋𝚎 𝚍𝚞𝚎 𝚝𝚘 𝚜𝚕𝚘𝚠 𝚝𝚘𝚛𝚛𝚎𝚗𝚝"
                         )
                         await event.edit(
-                            f"😔**__𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍:__** \n\n**🗂ꜰɪʟᴇ ɴᴀᴍᴇ:** <code>{file.name}</code> \n\n💽**ꜰɪʟᴇ ꜱɪᴢᴇ:** {file.total_length_string()} \n\n #MetaDataError"
+                            f"😔**__𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙲𝚊𝚗𝚌𝚎𝚕𝚕𝚎𝚍...__** \n\n**🗂ꜰɪʟᴇ ɴᴀᴍᴇ:** <code>{file.name}</code> \n\n💽**ꜰɪʟᴇ ꜱɪᴢᴇ:** {file.total_length_string()} \n\n #MetaDataError"
                         )
                         file.remove(force=True, files=True)
                         return False
@@ -368,16 +368,16 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
             LOGGER.info(
-                f"📥__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ:__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+                f"📥__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
             )
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await event.edit(
-                f"📥__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ:__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+                f"📥__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
             )
             return True
     except aria2p.client.ClientException:
         await event.edit(
-            f"😤__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ:**__ \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+            f"😤__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ...**__ \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
         )
     except MessageNotModified as ep:
         LOGGER.info(ep)
@@ -397,7 +397,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
         LOGGER.info(str(e))
         if "not found" in str(e) or "'file'" in str(e):
             await event.edit(
-                f"🗑**__ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ:__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+                f"🗑**__ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴀɴᴄᴇʟʟᴇᴅ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
             )
             return False
         else:
