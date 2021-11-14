@@ -368,11 +368,11 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
             LOGGER.info(
-                f"📥__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+                f"📥**__ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
             )
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await event.edit(
-                f"📥__**ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
+                f"📥**__ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇ...__** \n\n<b>🗂ꜰɪʟᴇ ɴᴀᴍᴇ:</b> {file.name} \n\n<b>💽ꜰɪʟᴇ ꜱɪᴢᴇ:</b> {file.total_length_string()}"
             )
             return True
     except aria2p.client.ClientException:
